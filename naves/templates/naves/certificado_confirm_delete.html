@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confirmar Eliminación</title>
+    </head>
+    <body>
+        <h1>Eliminar a {{ object.nombre }}??</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Si</button>
+            <button><a href="{% url 'naves:nave_detail' object.nave.pk %}">No</a></button>
+        </form>
+    </body>
+</html>
